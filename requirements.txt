@@ -1,0 +1,7 @@
+flask
+supabase
+pyjwt
+requests
+python-dotenv
+authlib
+flask_session
