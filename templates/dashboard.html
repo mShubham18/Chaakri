@@ -8,20 +8,56 @@
 </head>
 <body>
     <div class="dashboard">
+        
+        <!-- User Details (Full Width) -->
         <div class="user-info">
+            <form action="{{ url_for('auth.logout') }}" method="POST">
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
             <img src="{{ session['user']['picture'] }}" alt="Profile Picture" class="profile-pic">
             <h2>Welcome, {{ session['user']['name'] }}</h2>
             <p>Email: {{ session['user']['email'] }}</p>
         </div>
         
-        <h3>Job Listings</h3>
-        <div class="job-listings">
-            <!-- Job listings will be populated here -->
+
+        <!-- Job Search & Listings Row -->
+        <div class="job-container">
+            
+            <!-- Job Search Form (Left) -->
+            <div class="job-search">
+                <h3>Find Your Next Job</h3>
+                <form method="GET" action="{{ url_for('jobs') }}">
+                    <input type="text" name="keyword" placeholder="Enter job title or keyword" required>
+                    <input type="text" name="location" placeholder="Enter location" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <!-- Job Listings (Right, Scrollable) -->
+            <div class="job-listings">
+                {% if jobs %}
+                    {% for job in jobs %}
+                        <div class="job-card">
+                            <h4>{{ job.title }}</h4>
+                            <p><strong>Company:</strong> {{ job.company }}</p>
+                            <p><strong>Location:</strong> {{ job.location }}</p>
+                            <a href="{{ job.url }}" target="_blank" class="apply-btn">Apply Now</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No jobs found. Try searching with different keywords.</p>
+                {% endif %}
+            </div>
+
         </div>
-        
-        <form action="{{ url_for('auth.logout') }}" method="POST">
-            <button type="submit" class="logout-btn">Logout</button>
-        </form>
+
     </div>
+
+    <!-- JavaScript to Show Loading Message -->
+    <script>
+        document.querySelector("form").addEventListener("submit", function() {
+            document.getElementById("loading-message").style.display = "block";
+        });
+    </script>
 </body>
 </html>

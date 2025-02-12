@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     background-color: #292D3E;
     color: #A6ACCD;
@@ -10,6 +11,7 @@ body {
     height: 100vh;
 }
 
+/* Container */
 .container {
     background-color: #1E1E2E;
     padding: 2rem;
@@ -18,11 +20,13 @@ body {
     text-align: center;
 }
 
-h1 {
+/* Headings */
+h1, .dashboard h2 {
     color: #C792EA;
 }
 
-button {
+/* Buttons */
+button, .apply-btn {
     background-color: #C792EA;
     color: #1E1E2E;
     border: none;
@@ -31,22 +35,102 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
 }
 
-button:hover {
+button:hover, .apply-btn:hover {
     background-color: #AB47BC;
 }
 
+/* Dashboard */
 .dashboard {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 20px;
     background-color: #1E1E2E;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 1200px;
 }
 
-.dashboard h2 {
-    color: #C792EA;
+/* Row Layout */
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* User Info Container */
+.user-info {
+    background: #282a36;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    width: 100%;
+    position: relative; /* Allows absolute positioning inside */
+}
+
+/* Logout Button */
+.logout-btn {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #ff5555;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #ff4444;
+}
+
+
+/* Job Search & Listings Row */
+.job-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Job Search Form */
+.job-search {
+    flex: 1;
+    background: #3b3f5c;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Job Listings */
+.job-listings {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #454b72;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+    max-height: 400px; /* Allows scrolling */
+}
+
+/* Job Card */
+.job-card {
+    background: #6272a4;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
 }
