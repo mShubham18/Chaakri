@@ -14,7 +14,6 @@
             <form action="{{ url_for('auth.logout') }}" method="POST">
                 <button type="submit" class="logout-btn">Logout</button>
             </form>
-            <img src="{{ session['user']['picture'] }}" alt="Profile Picture" class="profile-pic">
             <h2>Welcome, {{ session['user']['name'] }}</h2>
             <p>Email: {{ session['user']['email'] }}</p>
         </div>

@@ -18,6 +18,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    
 }
 
 /* Headings */
@@ -46,6 +47,7 @@ button:hover, .apply-btn:hover {
 
 /* Dashboard */
 .dashboard {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,19 +70,19 @@ button:hover, .apply-btn:hover {
 /* User Info Container */
 .user-info {
     background: #282a36;
-    padding: 20px;
+    padding: 8px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     color: white;
-    width: 100%;
+    width: 90%;
     position: relative; /* Allows absolute positioning inside */
 }
 
 /* Logout Button */
 .logout-btn {
     position: absolute;
-    top: 50px;
+    margin-top: 20px;
     right: 20px;
     background-color: #ff5555;
     color: white;
@@ -100,17 +102,20 @@ button:hover, .apply-btn:hover {
 /* Job Search & Listings Row */
 .job-row {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     width: 100%;
+
 }
 
 /* Job Search Form */
 .job-search {
     flex: 1;
     background: #3b3f5c;
+    margin: 20px;
     padding: 20px;
     border-radius: 10px;
     color: white;
+    text-align: center;
 }
 
 /* Job Listings */
@@ -120,10 +125,11 @@ button:hover, .apply-btn:hover {
     flex-direction: column;
     gap: 15px;
     background: #454b72;
+    margin: 20px;
     padding: 20px;
     border-radius: 10px;
     overflow-y: auto;
-    max-height: 400px; /* Allows scrolling */
+    height: 400px; /* Allows scrolling */
 }
 
 /* Job Card */
@@ -134,3 +140,29 @@ button:hover, .apply-btn:hover {
     color: white;
     transition: 0.3s;
 }
+
+.job-search input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    width: 200px; /* Set a specific width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 16px;
+  }
+.job-search input[type="text"]:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #C792EA; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); /* Add a subtle shadow */
+  }
+.job-search button {
+    padding: 10px 15px;
+    background-color: #C792EA;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover, .apply-btn:hover {
+    background-color: #AB47BC;
+}
+  
