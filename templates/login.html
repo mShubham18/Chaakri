@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Welcome to Job App</h1>
-    <a href="/login">Login with Google</a>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="{{ url_for('auth.login') }}" method="GET">
+            <button type="submit" class="google-login">Sign in with Google</button>
+        </form>
+    </div>
 </body>
 </html>

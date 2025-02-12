@@ -104,7 +104,7 @@ def callback():
 
     return redirect(url_for("home"))
 
-@auth.route("/logout")
+@auth.route("/logout",methods=["GET", "POST"])
 def logout():
     session.clear()
     return redirect(url_for("home"))
